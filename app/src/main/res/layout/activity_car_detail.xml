@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CarDetailActivity"
+    android:background="@color/black">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="#244BAB"
+                android:title="Car Detail"
+                android:elevation="20dp"
+                android:titleTextColor="@color/white">
+
+            </Toolbar>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="6dp"
+                android:layout_marginStart="6dp"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Medium"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toBottomOf="@id/toolbar"
+                android:src="@drawable/ferrari"/>
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Ferrari 458"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/image"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/car_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="4.5 V8 GASOLINA F1-CDT"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/name"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textStyle="italic"/>
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="500,000.00"
+                app:layout_constraintTop_toBottomOf="@id/car_item"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="20dp"
+                android:textSize="20sp"
+                android:background="#FF3B6DED"
+                android:textColor="@color/white"
+                android:padding="4dp"/>
+
+            <RatingBar
+                android:id="@+id/rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/price"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="16dp"
+                android:numStars="5"
+                tools:rating="3.5"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:progressTint="#FFBF00"/>
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1.0dp"
+                android:layout_margin="10dp"
+                android:background="#000000"
+                app:layout_constraintTop_toBottomOf="@id/rating"
+                android:layout_marginTop="14dp"/>
+
+            <TextView
+                android:id="@+id/description_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Descrição"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/divider"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/descri_car"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="Ar quente, Banco com regulagem de altura, Controle de tração, Freio ABS, Rodas de liga leve, Volante com regulagem de altura, Direção hidráulica."
+                app:layout_constraintTop_toBottomOf="@id/description_text"
+                android:textColor="@color/white"
+                android:layout_marginTop="14dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textStyle="italic"/>
+
+            <View
+                android:id="@+id/divider_two"
+                android:layout_width="match_parent"
+                android:layout_height="1.0dp"
+                android:layout_margin="10dp"
+                android:background="#000000"
+                app:layout_constraintTop_toBottomOf="@id/descri_car"
+                android:layout_marginTop="14dp"/>
+
+            <TextView
+                android:id="@+id/cor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cor"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/divider_two"
+                android:layout_marginTop="6dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/description_cor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="Vermelho"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/cor"
+                android:layout_marginTop="6dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textStyle="italic"/>
+
+            <TextView
+                android:id="@+id/modelo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Modelo"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/description_cor"
+                android:layout_marginTop="6dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/description_modelo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="458"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/modelo"
+                android:layout_marginTop="6dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textStyle="italic"/>
+
+            <TextView
+                android:id="@+id/ano"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ano"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/description_modelo"
+                android:layout_marginTop="6dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/description_ano"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="2010/2010"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/ano"
+                android:layout_marginTop="6dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textStyle="italic"/>
+
+            <TextView
+                android:id="@+id/km"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="KM"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/description_ano"
+                android:layout_marginTop="6dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/description_km"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="35.000"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/km"
+                android:layout_marginTop="6dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textStyle="italic"/>
+
+            <View
+                android:id="@+id/divider_three"
+                android:layout_width="match_parent"
+                android:layout_height="1.0dp"
+                android:layout_margin="10dp"
+                android:background="#000000"
+                app:layout_constraintTop_toBottomOf="@id/description_km"
+                android:layout_marginTop="14dp"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#01A401"
+                android:text="COMPRAR"
+                app:layout_constraintTop_toBottomOf="@+id/divider_three"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textColor="@color/black"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
